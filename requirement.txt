@@ -1,0 +1,10 @@
+colorama==0.4.4
+mido==1.2.10
+numpy==1.21.6
+pretty-midi==0.2.9
+protobuf==3.20.1
+six==1.16.0
+tensorboardX==2.5
+torch==1.11.0
+tqdm==4.64.0
+typing_extensions==4.2.0
