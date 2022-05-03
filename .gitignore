@@ -1,6 +1,11 @@
 
+<<<<<<< HEAD
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode
+=======
+# Created by https://www.toptal.com/developers/gitignore/api/python
+# Edit at https://www.toptal.com/developers/gitignore?templates=python
+>>>>>>> 147e49d27e85eb59e3a6b3973972e77e61a80a32
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -156,6 +161,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+<<<<<<< HEAD
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -178,3 +184,6 @@ cython_debug/
 # Support for Project snippet scope
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
+=======
+# End of https://www.toptal.com/developers/gitignore/api/python
+>>>>>>> 147e49d27e85eb59e3a6b3973972e77e61a80a32
