@@ -9,13 +9,13 @@ from processor import encode_midi
 def preprocess_midi_files_under(midi_dir='data/', save_dir='processed/'):
     if midi_dir[-1] != '/':
         midi_dir += '/'
-    if midi_dir[-1] != '/':
-        midi_dir += '/'
     file_list = []
-    file_list += glob.glob(midi_dir + '*.mid')
-    file_list += glob.glob(midi_dir + '*.midi')
+    file_list += glob.iglob(midi_dir + '*.mid')
+    #file_list += glob.glob(midi_dir + '*.midi')
     os.makedirs(save_dir, exist_ok=True)
-
+    
+    success_count = 0
+    
     for file in tqdm(file_list, desc='processing midis'):
 
         try:
@@ -26,16 +26,14 @@ def preprocess_midi_files_under(midi_dir='data/', save_dir='processed/'):
         except EOFError:
             print('EOF Error')
             return
-        for i in range(len(data) - 1025):
-
-            with open('{}/{}.pickle'.format(save_dir, file.split('/')[-1]), 'wb') as f:
-                pickle.dump(data, f)
-            print('Piece {} generated.'.format(i))
+        
+        with open('{}/{}.pickle'.format(save_dir, file.split('\\')[-1]), 'wb') as f:
+            pickle.dump(data, f)
+            success_count += 1
+            
+    print('{} pieces encoded successfully.'.format(success_count))
 
 if __name__ == '__main__':
-    '''
     preprocess_midi_files_under(
             midi_dir=sys.argv[1],
             save_dir=sys.argv[2])
-    '''
-    print(sys.argv)
